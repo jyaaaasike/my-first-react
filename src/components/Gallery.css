@@ -1,0 +1,150 @@
+/* Gallery.css */
+
+.gallery-section {
+    padding-top: 5rem; /* py-20 */
+    padding-bottom: 5rem; /* py-20 */
+    background-color: #f7f7f7; /* bg-gray-100 */
+}
+
+.gallery-container {
+    max-width: 1280px; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.gallery-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    color: #1a1a1a; /* text-gray-900 */
+    margin-bottom: 2.5rem; /* mb-10 */
+    text-align: center;
+}
+
+/* --- Category Navigation/Filter Styles --- */
+
+.category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem; /* space-x-2 */
+    margin-bottom: 3rem; /* mb-12 */
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    margin: 0.25rem; /* my-1 */
+    font-size: 0.875rem; /* text-sm */
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filter-btn:not(.active) {
+    background-color: #e5e7eb; /* bg-gray-200 */
+    color: #4b5563; /* text-gray-700 */
+}
+
+.filter-btn:not(.active):hover {
+    background-color: #d1d5db; /* hover:bg-gray-300 */
+}
+
+.filter-btn.active {
+    background-color: #4f46e5; /* bg-indigo-600 */
+    color: #ffffff; /* text-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+/* --- Masonry Grid Styles --- */
+
+.art-grid {
+    display: flex;
+    margin-left: -2rem; /* Creates the gutter for the left side of the first column */
+    width: auto;
+}
+
+.art-grid-column {
+    padding-left: 2rem; /* Applies the gutter spacing between columns */
+    background-clip: padding-box; /* Ensures padding doesn't affect background */
+}
+
+
+/* --- Art Card Styles (The "boxes") --- */
+
+.art-card {
+    /* Base styling for each artwork box */
+    background-color: #ffffff; /* White background for the box */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-md */
+    overflow: hidden; /* Ensures image corners are rounded with the card */
+    cursor: pointer;
+    position: relative; /* For overlay positioning */
+    margin-bottom: 2rem; /* Spacing between cards in the same column */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    -webkit-backface-visibility: hidden; /* Fixes potential Safari rendering glitch with transform */
+    backface-visibility: hidden;
+}
+
+.art-card:hover {
+    transform: translateY(-0.25rem) scale(1.02); /* Slight lift and scale on hover */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* Larger shadow on hover */
+}
+
+.art-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    object-fit: cover; /* Ensure image covers its container */
+    transition: opacity 0.3s ease;
+}
+
+.art-card:hover .art-image {
+    opacity: 0.85; /* Slightly dim image on hover */
+}
+
+/* Art Info Overlay for Title (Optional but nice for interaction) */
+.art-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Gradient background for text legibility */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    padding: 1rem;
+    padding-top: 3rem; /* More padding at top to account for gradient */
+    transform: translateY(100%); /* Start off-screen */
+    transition: transform 0.3s ease;
+}
+
+.art-card:hover .art-info {
+    transform: translateY(0); /* Slide up on hover */
+}
+
+.art-title-overlay {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease 0.1s; /* Fade in with a slight delay */
+}
+
+.art-card:hover .art-title-overlay {
+    opacity: 1; /* Show on hover */
+}
+
+/* Responsive adjustments for smaller screens (Masonry handles columns) */
+@media (max-width: 768px) {
+    .art-grid {
+        margin-left: -1rem; /* Smaller gutter for mobile */
+    }
+    .art-grid-column {
+        padding-left: 1rem;
+    }
+    .art-card {
+        margin-bottom: 1rem; /* Less vertical space on mobile */
+    }
+}

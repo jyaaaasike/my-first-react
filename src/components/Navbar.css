@@ -1,0 +1,99 @@
+:root {
+  --text-color-dark: #333333; 
+  --navbar-bg: #ffffff; 
+  --link-color: var(--text-color-dark);
+  --dropdown-bg: #f0f0f0; 
+  --highlight-color: #e0e0e0; 
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background-color: var(--navbar-bg); 
+    color: var(--text-color-dark);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    position: relative; 
+}
+
+.navbar-logo {
+    flex-basis: 250px; 
+    display: flex; 
+    align-items: center;
+}
+
+.logo-image {
+    height: 45px; 
+    width: auto;
+}
+
+.navbar-center-links {
+    display: flex;
+    gap: 2.5rem; 
+    justify-content: center; 
+    flex-grow: 1; 
+}
+
+.navbar-right-menu {
+    position: relative; 
+    flex-basis: 250px; 
+    display: flex; 
+    justify-content: flex-end; 
+}
+
+.nav-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+    opacity: 0.6;
+}
+
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--dropdown-bg);
+    color: var(--text-color-dark);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.nav-dropdown-toggle:hover {
+    background-color: var(--highlight-color);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background-color: var(--dropdown-bg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 4px;
+    min-width: 180px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: var(--highlight-color);
+}
