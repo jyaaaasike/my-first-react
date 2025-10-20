@@ -1,17 +1,30 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Landing from "./components/Landing";
-import About from "./components/About";
-import Gallery from "./components/Gallery";
 import "./App.css";
+
+import Navbar from "./components/Navbar";
+import Profile from "./components/Profile";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="day-mode">
+    <div className="App">
       <Navbar />
-      <Landing />
-      <About />
-      <Gallery />
+
+      <section id="profile">
+        <Profile />
+      </section>
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+
+      <Footer />
     </div>
   );
 }

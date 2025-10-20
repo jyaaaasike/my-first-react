@@ -1,0 +1,49 @@
+.profile-section,
+.profile-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+  border: 4px solid #4f46e5;
+  transition: transform 0.5s;
+}
+
+.profile-photo:hover {
+  transform: scale(1.03);
+}
+
+.profile-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #333;
+}
+
+.profile-text h1 span {
+  color: #4f46e5;
+}
+
+.profile-text h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.profile-text p {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
